@@ -1,4 +1,4 @@
-The repository is part of a mod collection for Space Engineers &copy Keen Software House. 
+The repository is part of a mod collection for Space Engineers &copy; Keen Software House. 
 
 SE.DE - Environment
 ===================
