@@ -1,0 +1,324 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <PlanetGeneratorDefinitions>
+    <PlanetGeneratorDefinition>
+      <Id>
+        <TypeId>PlanetGeneratorDefinition</TypeId>
+        <SubtypeId>Tau_Verisia_A</SubtypeId>
+      </Id>
+  <MesherPostprocessing xsi:type="MyObjectBuilder_VoxelMesherComponentDefinition">
+        <PostprocessingSteps>
+          <Step xsi:type="MyObjectBuilder_VoxelPostprocessingDecimate" ForPhysics="true">
+            <LodSettings>
+              <Settings FromLod="0">
+                <FeatureAngle>15</FeatureAngle>
+                <EdgeThreshold>.04</EdgeThreshold>
+                <PlaneThreshold>.02</PlaneThreshold>
+              </Settings>
+              <Settings FromLod="1">
+                <FeatureAngle>15</FeatureAngle>
+                <EdgeThreshold>.04</EdgeThreshold>
+                <PlaneThreshold>.04</PlaneThreshold>
+              </Settings>
+              <Settings FromLod="2">
+                <FeatureAngle>15</FeatureAngle>
+                <EdgeThreshold>.06</EdgeThreshold>
+                <PlaneThreshold>.06</PlaneThreshold>
+              </Settings>
+            </LodSettings>
+          </Step>
+        </PostprocessingSteps>
+    </MesherPostprocessing>  
+	
+    <PlanetMaps Material="true" Ores="false" Biome="false" Occlusion="true"/>	
+
+
+    <DefaultSurfaceMaterial Material="Tau_Verisia_A" MaxDepth="5"/>
+    <DefaultSubSurfaceMaterial Material="Ice_02"/>
+	
+
+	<SoundRules>
+	<SoundRule>
+        <Height Min="0" Max="100000"/>
+        <Latitude Min="0" Max="90"/>
+        <SunAngleFromZenith Min="0" Max="180"/>
+        <EnvironmentSound>Tau_Verisia_A_env_em_field</EnvironmentSound>
+      </SoundRule>
+	  
+	
+
+	  
+  	  
+	</SoundRules>
+
+      <SurfaceGravity>30</SurfaceGravity>
+	  <GravityFalloffPower>5.5</GravityFalloffPower>
+      <HasAtmosphere>true</HasAtmosphere>
+	  <MaximumOxygen>0.1</MaximumOxygen>
+	  
+	  <Atmosphere>
+        <Breathable>false</Breathable>
+		<OxygenDensity>0.1</OxygenDensity>
+		<Density>50</Density>
+		<!-- LimitAltitude steht für die höhe der Atmosphäre (und damit auch, wann das damage script aktiv wird -->
+		<LimitAltitude>50.0</LimitAltitude>
+	  </Atmosphere>
+
+      <AtmosphereSettings>
+		<RayleighScattering>
+		  <X>100</X>
+		  <Y>100</Y>
+		  <Z>1</Z>
+		</RayleighScattering>
+		<MieScattering>50</MieScattering>
+
+		<MieColorScattering>
+		  <X>1</X>
+		  <Y>1</Y>
+		  <Z>155</Z>
+		</MieColorScattering>
+
+          <RayleighHeight>20</RayleighHeight>
+          <RayleighHeightSpace>10</RayleighHeightSpace>
+          <RayleighTransitionModifier>4</RayleighTransitionModifier>
+		<MieHeight>25</MieHeight>
+		<MieG>20</MieG>
+		<Intensity>3</Intensity>
+        <SeaLevelModifier>0</SeaLevelModifier>
+        <AtmosphereTopModifier>10</AtmosphereTopModifier>
+		<FogIntensity>10</FogIntensity>
+		<Scale>1</Scale>
+
+		<SunColor>
+            <X>1</X>
+            <Y>1</Y>
+            <Z>100</Z>
+          </SunColor>
+
+          <SunSpecularColor>
+            <X>50</X>
+            <Y>1</Y>
+            <Z>1</Z>
+          </SunSpecularColor>
+
+      </AtmosphereSettings>
+
+    <CloudLayers>
+	<CloudLayer>
+        <!-- Ring -->
+        <Model>Models/CloudRing.mwm</Model>
+        <Textures>
+		<Texture>Textures/BylenRing.dds</Texture>
+        </Textures>
+        <RelativeAltitude>200</RelativeAltitude>
+        <RotationAxis>
+          <X>0</X>
+          <Y>0</Y>
+          <Z>0</Z>
+        </RotationAxis>
+        <AngularVelocity>0.00015</AngularVelocity>
+        <InitialRotation>0</InitialRotation>
+        <ScalingEnabled>false</ScalingEnabled>
+        <FadeOutRelativeAltitudeStart>0</FadeOutRelativeAltitudeStart>
+        <FadeOutRelativeAltitudeEnd>0</FadeOutRelativeAltitudeEnd>
+        <ApplyFogRelativeDistance>10</ApplyFogRelativeDistance>
+      </CloudLayer>
+	<CloudLayer>
+        <!-- Ring -->
+        <Model>Models/CloudRing.mwm</Model>
+        <Textures>
+		<Texture>Textures/BylenRing.dds</Texture>
+        </Textures>
+        <RelativeAltitude>200</RelativeAltitude>
+        <RotationAxis>
+          <X>0</X>
+          <Y>0</Y>
+          <Z>0</Z>
+        </RotationAxis>
+        <AngularVelocity>0.00015</AngularVelocity>
+        <InitialRotation>180</InitialRotation>
+        <ScalingEnabled>false</ScalingEnabled>
+        <FadeOutRelativeAltitudeStart>0</FadeOutRelativeAltitudeStart>
+        <FadeOutRelativeAltitudeEnd>0</FadeOutRelativeAltitudeEnd>
+        <ApplyFogRelativeDistance>10</ApplyFogRelativeDistance>
+      </CloudLayer>
+  
+<!-- 	  
+      <CloudLayer>
+        <Model>Models/Environment/Sky/CloudSphere.mwm</Model>
+        <Textures>
+          <Texture>Textures/BylenClouds.dds</Texture>
+        </Textures>
+        <RelativeAltitude>0.6</RelativeAltitude>
+        <RotationAxis>
+          <X>0</X>
+          <Y>0</Y>
+          <Z>0</Z>
+        </RotationAxis>
+        <AngularVelocity>0</AngularVelocity>
+        <InitialRotation>1.2</InitialRotation>
+        <ScalingEnabled>false</ScalingEnabled>
+        <FadeOutRelativeAltitudeStart>0.5</FadeOutRelativeAltitudeStart>
+        <FadeOutRelativeAltitudeEnd>0.0</FadeOutRelativeAltitudeEnd>
+        <ApplyFogRelativeDistance>10</ApplyFogRelativeDistance>
+      </CloudLayer>
+      <CloudLayer>
+        <Model>Models/Environment/Sky/CloudSphere.mwm</Model>
+        <Textures>
+          <Texture>Textures/BylenClouds.dds</Texture>
+        </Textures>
+        <RelativeAltitude>6.0</RelativeAltitude>
+        <RotationAxis>
+          <X>0</X>
+          <Y>0</Y>
+          <Z>0</Z>
+        </RotationAxis>
+        <AngularVelocity>0</AngularVelocity>
+        <InitialRotation>1.2</InitialRotation>
+        <ScalingEnabled>false</ScalingEnabled>
+        <FadeOutRelativeAltitudeStart>1.4</FadeOutRelativeAltitudeStart>
+        <FadeOutRelativeAltitudeEnd>1.0</FadeOutRelativeAltitudeEnd>
+        <ApplyFogRelativeDistance>10</ApplyFogRelativeDistance>
+      </CloudLayer>
+       <CloudLayer>
+        <Model>Models/Environment/Sky/CloudSphere.mwm</Model>
+        <Textures>
+          <Texture>Textures/Models/Environment/Sky/Aplov/gas_giant.dds</Texture>
+        </Textures>
+        <RelativeAltitude>7.0</RelativeAltitude>
+        <RotationAxis>
+          <X>0</X>
+          <Y>0</Y>
+          <Z>0</Z>
+        </RotationAxis>
+        <AngularVelocity>0</AngularVelocity>
+        <InitialRotation>1.2</InitialRotation>
+        <ScalingEnabled>false</ScalingEnabled>
+        <FadeOutRelativeAltitudeStart>1.4</FadeOutRelativeAltitudeStart>
+        <FadeOutRelativeAltitudeEnd>1.0</FadeOutRelativeAltitudeEnd>
+        <ApplyFogRelativeDistance>10</ApplyFogRelativeDistance>
+      </CloudLayer>           
+-->
+
+      <!-- Near layers -->
+      <CloudLayer>
+        <Model>Models/Environment/Sky/CloudSphere.mwm</Model>
+        <Textures>
+          <Texture>Textures/BylenRing.dds</Texture>
+        </Textures>
+        <RelativeAltitude>0</RelativeAltitude>
+        <RotationAxis>
+          <X>0</X>
+          <Y>0</Y>
+          <Z>0</Z>
+        </RotationAxis>
+        <AngularVelocity>0.03</AngularVelocity>
+        <InitialRotation>0.15</InitialRotation>
+        <ScalingEnabled>true</ScalingEnabled>
+        <FadeOutRelativeAltitudeStart>0</FadeOutRelativeAltitudeStart>
+        <FadeOutRelativeAltitudeEnd>1.6</FadeOutRelativeAltitudeEnd>
+        <ApplyFogRelativeDistance>5</ApplyFogRelativeDistance>
+      </CloudLayer>
+	  
+	    <CloudLayer>
+        <Model>Models/Environment/Sky/CloudSphere.mwm</Model>
+        <Textures>
+          <Texture>Textures/BylenRing.dds</Texture>
+        </Textures>
+        <RelativeAltitude>5.0</RelativeAltitude>
+        <RotationAxis>
+          <X>0</X>
+          <Y>0</Y>
+          <Z>0</Z>
+        </RotationAxis>
+        <AngularVelocity>0.002</AngularVelocity>
+        <InitialRotation>0.15</InitialRotation>
+        <ScalingEnabled>true</ScalingEnabled>
+        <FadeOutRelativeAltitudeStart>0</FadeOutRelativeAltitudeStart>
+        <FadeOutRelativeAltitudeEnd>0</FadeOutRelativeAltitudeEnd>
+        <ApplyFogRelativeDistance>0</ApplyFogRelativeDistance>
+      </CloudLayer>
+	  
+      <CloudLayer>
+        <Model>Models/Environment/Sky/CloudSphere.mwm</Model>
+        <Textures>
+          <Texture>Textures/Models/Environment/Sky/gas_giant.dds</Texture>
+        </Textures>
+        <RelativeAltitude>8.0</RelativeAltitude>
+        <RotationAxis>
+          <X>0</X>
+          <Y>0</Y>
+          <Z>0</Z>
+        </RotationAxis>
+        <AngularVelocity>0.002</AngularVelocity>
+        <InitialRotation>0.15</InitialRotation>
+        <ScalingEnabled>true</ScalingEnabled>
+        <FadeOutRelativeAltitudeStart>0</FadeOutRelativeAltitudeStart>
+        <FadeOutRelativeAltitudeEnd>0</FadeOutRelativeAltitudeEnd>
+        <ApplyFogRelativeDistance>0</ApplyFogRelativeDistance>
+      </CloudLayer>
+	    <CloudLayer>
+        <Model>Models/Environment/Sky/CloudSphere.mwm</Model>
+        <Textures>
+          <Texture>Textures/BylenRing.dds</Texture>
+        </Textures>
+        <RelativeAltitude>10.0</RelativeAltitude>
+        <RotationAxis>
+          <X>0</X>
+          <Y>0</Y>
+          <Z>0</Z>
+        </RotationAxis>
+        <AngularVelocity>0.002</AngularVelocity>
+        <InitialRotation>15</InitialRotation>
+        <ScalingEnabled>true</ScalingEnabled>
+        <FadeOutRelativeAltitudeStart>0</FadeOutRelativeAltitudeStart>
+        <FadeOutRelativeAltitudeEnd>0</FadeOutRelativeAltitudeEnd>
+        <ApplyFogRelativeDistance>100</ApplyFogRelativeDistance>
+      </CloudLayer>
+      <CloudLayer>
+        <Model>Models/Environment/Sky/CloudSphere.mwm</Model>
+        <Textures>
+          <Texture>Textures/Models/Environment/Sky/gas_giant.dds</Texture>
+        </Textures>
+        <RelativeAltitude>15.0</RelativeAltitude>
+        <RotationAxis>
+          <X>0</X>
+          <Y>0</Y>
+          <Z>0</Z>
+        </RotationAxis>
+        <AngularVelocity>0.005</AngularVelocity>
+        <InitialRotation>0.15</InitialRotation>
+        <ScalingEnabled>true</ScalingEnabled>
+        <FadeOutRelativeAltitudeStart>0</FadeOutRelativeAltitudeStart>
+        <FadeOutRelativeAltitudeEnd>0</FadeOutRelativeAltitudeEnd>
+        <ApplyFogRelativeDistance>100</ApplyFogRelativeDistance>
+      </CloudLayer>	  
+      <CloudLayer>
+        <Model>Models/Environment/Sky/CloudSphere.mwm</Model>
+        <Textures>
+          <Texture>Textures/Models/Environment/Sky/UnlirClouds.dds</Texture>
+        </Textures>
+        <RelativeAltitude>20.0</RelativeAltitude>
+        <RotationAxis>
+          <X>0</X>
+          <Y>0</Y>
+          <Z>0</Z>
+        </RotationAxis>
+        <AngularVelocity>-0.001</AngularVelocity>
+        <InitialRotation>3.2</InitialRotation>
+        <ScalingEnabled>true</ScalingEnabled>
+        <FadeOutRelativeAltitudeStart>0</FadeOutRelativeAltitudeStart>
+        <FadeOutRelativeAltitudeEnd>0</FadeOutRelativeAltitudeEnd>
+        <ApplyFogRelativeDistance>25</ApplyFogRelativeDistance>
+      </CloudLayer>
+    </CloudLayers>
+	  
+      <MaterialsMaxDepth Min="4000" Max="4000"/>
+      <MaterialsMinDepth Min="20" Max="20"/>
+
+      <HillParams Min = "-0.03" Max ="0.01"/>
+
+    </PlanetGeneratorDefinition>
+
+  </PlanetGeneratorDefinitions>
+</Definitions>

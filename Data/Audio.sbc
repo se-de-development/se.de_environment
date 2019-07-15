@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Sounds>
+    <Sound>
+      <Id>
+        <TypeId>MyObjectBuilder_AudioDefinition</TypeId>
+        <SubtypeId>Tau_Verisia_A_Atmos</SubtypeId>
+      </Id>
+      <Category>AMB</Category>
+      <MaxDistance>1000</MaxDistance>
+      <Volume>2</Volume>
+      <Loopable>true</Loopable>
+      <ModifiableByHelmetFilters>true</ModifiableByHelmetFilters>
+      <Waves>
+        <Wave Type="D2">
+          <Loop>Audio\Tau_Verisia_A_Atmos.xwm</Loop>
+        </Wave>
+      </Waves>
+    </Sound>
+	
+    <Sound>
+      <Id>
+        <TypeId>MyObjectBuilder_AudioDefinition</TypeId>
+        <SubtypeId>Tau_Verisia_A_env_em_field</SubtypeId>
+      </Id>
+      <Category>AMB</Category>
+      <MaxDistance>1000</MaxDistance>
+      <Volume>1</Volume>
+      <Loopable>true</Loopable>
+      <ModifiableByHelmetFilters>true</ModifiableByHelmetFilters>
+      <Waves>
+        <Wave Type="D2">
+          <Loop>Audio\env_em_field.xwm</Loop>
+        </Wave>
+      </Waves>
+    </Sound>
+  </Sounds>
+</Definitions>
